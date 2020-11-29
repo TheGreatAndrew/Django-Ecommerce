@@ -6,8 +6,8 @@ from djangoecommerceweb.views import dashboard, register, checkout, charge
 urlpatterns = [
     path("", views.ecommerce_index, name="ecommerce_index"),
     path("<int:pk>/", views.ecommerce_detail, name="ecommerce_detail"),
-    # path(r"^dashboard", views.dashboard, name="dashboard"),
     path("cart", views.cart, name="cart"),
+    # path(r"^dashboard", views.dashboard, name="dashboard"),
     url(r"^dashboard/", dashboard, name="dashboard"),
     url(r"^accounts/", include("django.contrib.auth.urls")),
     url(r"^register/", register, name="register"),
