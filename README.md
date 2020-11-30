@@ -17,6 +17,9 @@ to update model :
 python manage.py makemigrations djangoecommerceweb  
 python manage.py migrate  
 
+to run test :  
+python3 manage.py test djangoecommerceweb
+
 current versions :  
 pip-20.2.4  
 django  
