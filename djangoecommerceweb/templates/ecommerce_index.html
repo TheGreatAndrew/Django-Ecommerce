@@ -1,8 +1,30 @@
 {% extends "base.html" %}
-
+{% load static %}
 {% block page_content %}
-<div class="col-md-8 offset-md-2">
-    <h1>Ecommerce Web</h1>
-    {{product.product_name}}
+<h1>Ecommerce</h1>
+<form method="get">
+    <input name="q" type="text" placeholder="Search ...">
+</form>
+
+<div class="row">
+    {% for product in products %}
+    <div class="col-md-4">
+        <div class="card mb-2">
+            
+            <img class="card-img-top" src="{{product.product_imageUrl}}">
+            <div class="card-body">
+                <h5 class="card-title">{{ product.product_name }}</h5>
+                <p class="card-text">{{ product.product_description }}</p>
+                <p class="card-text">${{ product.product_price }}</p>
+
+                <a href="{% url 'ecommerce_detail' product.pk %}"
+                    class="btn btn-primary">
+                    Read More
+                </a>
+
+            </div>
+        </div>
+    </div>
+    {% endfor %}
 </div>
 {% endblock %}

@@ -14,3 +14,5 @@ python manage.py migrate
 current versions :  
 pip-20.2.4  
 django  
+
+

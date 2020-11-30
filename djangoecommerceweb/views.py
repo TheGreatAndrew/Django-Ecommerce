@@ -1,11 +1,14 @@
-from djangoecommerceweb.models import Product
 from django.shortcuts import redirect, render
 from django.urls import reverse
 from djangoecommerceweb.forms import CustomUserCreationForm
 from django.contrib.auth import login
 
+from djangoecommerceweb.models import Product
+
+
 def ecommerce_index(request):
     products = Product.objects.all()
+    print("hello andrew")
     context = {
         'products': products
     }
@@ -17,6 +20,14 @@ def ecommerce_detail(request, pk):
         'product': product
     }
     return render(request, 'ecommerce_detail.html', context)
+
+
+def cart(request, pk):
+    product = Product.objects.get(pk=pk)
+    context = {
+        'product': product
+    }
+    return render(request, "cart.html", context)
 
 def dashboard(request):
     return render(request, "users/dashboard.html")
@@ -33,9 +44,6 @@ def register(request):
             user = form.save()
             login(request, user)
             return redirect(reverse("dashboard"))
-
-def cart(request):
-    return render(request, "cart.html")
 
 def checkout(request):
     return render(request, "checkout.html")

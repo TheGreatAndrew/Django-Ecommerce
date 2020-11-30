@@ -21,9 +21,10 @@ class ProductCategory(models.Model):
     category_name = models.CharField(max_length=20)
 
 class Product(models.Model):
-    product_id = models.IntegerField()
     product_name = models.CharField(max_length=20)
     product_description = models.TextField()
+    product_imageUrl = models.TextField()
+    product_price = models.IntegerField()
     # product_image = models.FilePathField(path="/img")
 
 # ~ Users
