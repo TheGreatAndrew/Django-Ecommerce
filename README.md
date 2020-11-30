@@ -1,10 +1,10 @@
 # E-Commerce
 Fall20 - SWE E-Commerce Group Project
 
-to setup mac : 
+to setup mac :  
 python3 -m venv venv_mac  
 source venv/bin/activate  
-python manage.py runserver  
+python3 manage.py runserver  
 then copy the http url link  
 
 to update model :  
