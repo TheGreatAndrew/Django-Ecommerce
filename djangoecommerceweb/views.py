@@ -2,7 +2,8 @@ from django.shortcuts import redirect, render
 from django.urls import reverse
 from djangoecommerceweb.forms import CustomUserCreationForm
 from django.contrib.auth import login
-
+from djangoecommerceweb.models import Eli_Coupon, Ad
+from djangoecommerceweb.models import Eli_Order, Driver
 from djangoecommerceweb.models import Product
 
 
@@ -50,3 +51,36 @@ def checkout(request):
 
 def charge(request):
     return render(request, "charge.html")
+
+def Coupons_Ads_index(request):
+    coupons = Eli_Coupon.objects.all()
+    ads = Ad.objects.all()
+
+    context = {
+            'coupons': coupons,
+            'ads': ads
+    }
+
+    return render(request, 'Coupons_Ads_index.html', context)   
+
+
+def Drivers_Orders_index(request):
+    drivers = Driver.objects.all()
+    orders = Eli_Order.objects.all()
+
+    context = {
+                'drivers': drivers,
+                'orders': orders
+    }
+    
+    return render(request, 'Drivers_Orders_index.html', context)
+
+
+def Drivers_Orders_detail(request, pk):
+    drivers = Driver.objects.get(pk=pk)
+    context = {
+        'drivers': drivers
+
+    }
+    return render(request, 'Drivers_Orders_detail.html', context)
+

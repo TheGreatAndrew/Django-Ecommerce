@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% load static %}
+{% block page_content %}
+<h1>Drivers</h1>
+<div class="row">
+{% for driver in drivers %}
+    <div class="col-md-4">
+        <div class="card mb-2">
+            <img class="card-img-top" src="{% static driver.image %}">
+            <div class="card-body">
+                <h5 class="card-title">{{ driver.name }}</h5>
+                <p class="card-text"> {{ driver.is_available }} </p>
+                <a href="{% url 'Drivers_Orders_detail' driver.pk %}" class="btn btn-primary">
+                    Details
+                </a>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+<h1>Open Orders:</h1>
+<div class="row">
+    {% for order in orders %}
+        <div class="col-md-4">
+            <div class="card mb-2">
+                <img class="card-imgtop" src="{% static order.image %}">
+                <div class="card-body">
+                    <h5 class="card-title">{{ order.store }}</h5>
+                    <p class="card-text"> Customer Name: {{ order.customer_name }}</p>
+                    <p class="card-text">Item Count: {{ order.item_count }}</p>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+
+
+{% endblock %}

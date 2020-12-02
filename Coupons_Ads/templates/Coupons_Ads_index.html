@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% load static %}
+{% block page_content %}
+<h1>Coupons</h1>
+<div class="row">
+{% for coupon in coupons %}
+    <div class="col-md-4">
+        <div class="card mb-2">
+            <img class="card-img-top" src="{% static coupon.image %}">
+            <div class="card-body">
+                <h5 class="card-title">{{ coupon.product_name }}</h5>
+                <p class="card-text">${{ coupon.product_price }} - {{ coupon.discount }}% off</p>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+<h1>Ads</h1>
+<div class="row">
+    {% for ad in ads %}
+        <div class="col-md-4">
+            <div class="card mb-2">
+                <img class="card-img-top" src="{% static ad.image %}">
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+
+
+{% endblock %}
