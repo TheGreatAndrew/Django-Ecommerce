@@ -9,7 +9,7 @@
             <img class="card-img-top" src="{% static driver.image %}">
             <div class="card-body">
                 <h5 class="card-title">{{ driver.name }}</h5>
-                <p class="card-text"> {{ driver.is_available }} </p>
+                <p class="card-text"> Is Available: {{ driver.is_available }} </p>
                 <a href="{% url 'Drivers_Orders_detail' driver.pk %}" class="btn btn-primary">
                     Details
                 </a>
@@ -28,6 +28,11 @@
                     <h5 class="card-title">{{ order.store }}</h5>
                     <p class="card-text"> Customer Name: {{ order.customer_name }}</p>
                     <p class="card-text">Item Count: {{ order.item_count }}</p>
+                    {% for driver in drivers %}
+                    <a href="{% url 'Drivers_Orders_detail_assign' driver.pk %}" class="btn btn-primary">
+                        Assign to {{ driver.name }}
+                    </a>
+                    {% endfor %}
                 </div>
             </div>
         </div>

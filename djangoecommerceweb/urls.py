@@ -9,7 +9,7 @@ urlpatterns = [
     path("", views.Coupons_Ads_index, name="Coupons_Ads_index"),
     path("", views.Drivers_Orders_index, name="Drivers_Orders_index"),
     path("driver<int:pk>/", views.Drivers_Orders_detail, name="Drivers_Orders_detail"),
-
+    path("updateDriver<int:pk>/", views.Drivers_Orders_detail_assign, name="Drivers_Orders_detail_assign"),
     # url(r"^\?q=\<int:pk\>/", views.ecommerce_detail, name="ecommerce_detail"),
     # url(r"^aaa\<int:pk\>", views.ecommerce_detail, name="ecommerce_detail"),
 
