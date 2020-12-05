@@ -1,4 +1,4 @@
-#!/Users/nguyenduyvu/Desktop/djecommerce/venv/bin/python3
+#!/Users/nguyenduyvu/Drink/djecommerce/venv/bin/python3
 # When the django-admin.py deprecation ends, remove this script.
 import warnings
 
