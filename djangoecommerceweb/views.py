@@ -6,6 +6,7 @@ from djangoecommerceweb.models import Eli_Coupon, Ad
 from djangoecommerceweb.models import Eli_Order, Driver
 from djangoecommerceweb.models import Product
 
+from djangoecommerceweb.forms import DriverForm
 
 def ecommerce_index(request):
     products = Product.objects.all()
@@ -84,3 +85,24 @@ def Drivers_Orders_detail(request, pk):
     }
     return render(request, 'Drivers_Orders_detail.html', context)
 
+def Drivers_Orders_detail_assign(request, pk):
+    drivers = Driver.objects.get(pk=pk)
+
+    context = {
+        'drivers': drivers
+
+    }
+    drivers.is_available = False;
+
+    if drivers.name == "Rhea Nova":
+        drivers.order = "Store: H-E-B\nCustomer: Karen Chandler\nItem Count: 145\n"
+
+    elif drivers.name == "Cruz Garza":
+        drivers.order = "Store: Whole Foods\nCustomer: David Rodriguez\nItem Count: 80\n"
+
+    elif drivers.name == "Cory Terry-Cook":
+        drivers.order = "Store: Petsmart\nCustomer: Ginger Casey\nItem Count: 57\n"
+
+
+
+    return render(request, "Drivers_Orders_detail.html", context)
