@@ -24,4 +24,6 @@ urlpatterns = [
     path("djangoecommerceweb/", include("djangoecommerceweb.urls")),
     url(r"^", include("djangoecommerceweb.urls")),
 
+    path("inventory/", include("inventory.urls")),
+    url(r"^", include("inventory.urls")),
 ]

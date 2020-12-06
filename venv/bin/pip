@@ -1,4 +1,4 @@
-#!/Users/nguyenduyvu/Desktop/E-Commerce/venv/bin/python
+#!/Users/nguyenduyvu/Drink/E-Commerce/venv/bin/python
 # -*- coding: utf-8 -*-
 import re
 import sys

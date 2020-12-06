@@ -22,5 +22,6 @@ urlpatterns = [
     url(r"^checkout/", checkout, name="checkout"),
     url(r"^coupons_ads/", Coupons_Ads_index, name="coupons_ads"),
     url(r"^drivers_orders/", Drivers_Orders_index, name="drivers_orders")
+
     
 ]
