@@ -1,7 +1,7 @@
 from django.urls import path
 from . import views
 from django.conf.urls import include, url
-from djangoecommerceweb.views import dashboard, register, checkout, charge, Coupons_Ads_index, Drivers_Orders_index, Drivers_Orders_detail
+from djangoecommerceweb.views import dashboard, shopper_dashboard, register, checkout, charge, Coupons_Ads_index, Drivers_Orders_index, Drivers_Orders_detail
 
 urlpatterns = [
     path("", views.ecommerce_index, name="ecommerce_index"),
@@ -21,7 +21,8 @@ urlpatterns = [
     url(r"^charge/", charge, name="charge"),
     url(r"^checkout/", checkout, name="checkout"),
     url(r"^coupons_ads/", Coupons_Ads_index, name="coupons_ads"),
-    url(r"^drivers_orders/", Drivers_Orders_index, name="drivers_orders")
+    url(r"^drivers_orders/", Drivers_Orders_index, name="drivers_orders"),
+    url(r"^shopper_dashboard/", shopper_dashboard, name="shopper_dashboard")
 
     
 ]

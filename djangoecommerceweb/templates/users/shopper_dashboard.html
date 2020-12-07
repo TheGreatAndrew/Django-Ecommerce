@@ -2,18 +2,15 @@
 
 {% block page_content %}
 <div class="col-md-8 offset-md-2">
-    <h1>Hello, {{ user.username|default:'Guest' }}!</h1>
+    <h1>Hello, Shopper Martin</h1>
 </div>
 
 <div>
     {% if user.is_authenticated %}
         <a href="{% url 'logout' %}">Logout</a>
         <a href="{% url 'password_change' %}">Change password</a>
-        <h3>{{user.username}}</h3>
-        <h3>age : 25</h3>
-        <h3>address : 1882 Greenleaf Rd, San Antonio, Texas</h3>
-        <h3>billing info : credit card ending with 3371</h3>
-        <h3>preference : show cheapest products</h3>
+        <h3>Martin</h3>
+        <h3>Tasks to do : 0</h3>
     {% else %}
         <a href="{% url 'login' %}">Login</a>
     {% endif %}

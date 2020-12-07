@@ -34,6 +34,9 @@ def cart(request, pk):
 def dashboard(request):
     return render(request, "users/dashboard.html")
 
+def shopper_dashboard(request):
+    return render(request, "users/shopper_dashboard.html")
+
 def register(request):
     if request.method == "GET":
         return render(
