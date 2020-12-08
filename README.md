@@ -6,13 +6,13 @@ Fall20 - SWE E-Commerce Group Project
 ![Image of Login](https://github.com/TheGreatAndrew/Django-Ecommerce/blob/master/djangoecommerceweb/images/checkout.png)
 ![Image of Checkout](https://github.com/TheGreatAndrew/Django-Ecommerce/blob/master/djangoecommerceweb/images/login.png)
 
-team member
-Luke Puente
-Vu Nguyen
-Elijah Lozano
-Dion Collins
+team member   
+Luke Puente  
+Vu Nguyen  
+Elijah Lozano  
+Dion Collins  
 
-this is our Django Ecommerce website that has both frontend, built-in Django database and backend. 
+this is our Django Ecommerce website that has both frontend, built-in Django database and backend.   
 this is our user guide : https://docs.google.com/document/d/1Q7NshROmV0UIZuKtLl7GsVXhB6cwlH5NTZ1y5Kl1aS0/edit?usp=sharing
 
 to setup mac :  
